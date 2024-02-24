@@ -1,0 +1,131 @@
+/* This section processes the footnotes ------------------------------------- */
+
+body {
+    counter-reset: ft-counter-var;
+    /* font-family: Georgia, serif; */
+}
+sup::after {
+    counter-increment: ft-counter-var;
+    content: "[" counter(ft-counter-var) "]";
+}
+input[type=checkbox] ~ span {
+    display:none;
+}
+input[type=checkbox]:checked ~ span {
+    display:inline;
+    font-size:85%;
+    font-family: monospace;
+    font-weight:bold;
+    color:#aaaaaa;
+    cursor:default;
+}
+input[type=checkbox] {
+    display:none;
+}
+input[type=checkbox] ~ label {
+    display:inline;
+    cursor:pointer;
+}
+input[type=checkbox] ~ label:hover {
+    text-decoration:underline;
+    cursor:pointer;
+    color:red;
+}
+input[type=checkbox]:checked ~ label {
+    color:red;
+    text-decoration:none;
+}
+
+
+
+/* This section for general page styling ------------------------------------ */
+
+body {
+    width:700px;
+    margin: auto;
+}
+p {
+    text-align: justify;
+    font-family: Georgia, serif;
+}
+li {
+    text-align: justify;
+
+}
+article {
+    line-height: 200%;
+}
+canvas {
+    margin:auto;
+    display:block;
+}
+#hrefs, h1 {
+    text-align: center;
+    background-color:#eeeeee;
+    padding:15px;
+    border-radius:5px;
+}
+
+
+/* Table of contents -------------------------------------------------------- */
+
+tr.h1 {
+    padding-top:30px;
+    font-weight:bold;
+    font-size:150%;
+}
+tr a {color:#000000;}
+tr.h2 {font-size:100%;}
+tr.h3 {font-size:100%;}
+tr.h4 {font-size:100%;}
+td.h1 {padding-left:0px;}
+td.h2 {padding-left:0px;}
+td.h3 {padding-left:0px;}
+td.h4 {padding-left:0px;}
+td a {text-decoration: none;}
+
+
+
+/* This section for figure styling ------------------------------------------ */
+
+figure {
+    background-color:#eeeeee;
+}
+figure figcaption {
+    font-style: italic;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+.quantum-circuit-diagram {
+    margin: auto;
+    padding-top: 50px;
+    width: 600px;
+    display: block;
+}
+figure svg {
+    padding-top: 20px;
+    display: block;
+    margin: auto;
+}
+.figsvg {
+    overflow-x: auto;
+}
+
+
+
+/* This section for mathematical styling ------------------------------------ */
+
+.eq {
+    overflow-x:auto;
+}
+
+
+
+/* This section for phones or other small screens --------------------------- */
+
+@media (max-width: 1000px) {
+    body {
+        width:auto;
+    }
+}
